@@ -18,31 +18,47 @@ addons:
 # postgresql 	9.3 9.4 9.5 9.6 10 11
 install: true
 script:
-  - git --version || true
-  - git-lfs --version || true
-  - hg --version || true
-  - cmake --version || true
-  - gcc --version || true
-  - ccache --version || true
-  - shellcheck --version || true
-  - shfmt --version || true
-  - docker --version || true
-  - compose --version || true
-  - docker-compose --version || true
-  - rvm --version || true
-  - which -a ruby || true
-  - pyenv --version || true
-  - which -a python || true
+  - git              --version  # 2.27.0
+  - git-lfs          --version  # 2.9.2
+  - hg               --version  # 5.3
+  - svn --version || true
+  - cmake            --version  # 3.12.4
+  - gcc              --version  # 9.3.0
+  - ccache           --version  # 3.7.7
+  - shellcheck       --version  # 0.7.0
+  - shfmt            --version  # 2.6.3
+  - docker           --version  # 19.03.8
+  - docker-compose   --version  # 1.23.1
+  - rvm              --version  # 1.29.10
+  - which -a ruby
+  - /home/travis/.rvm/rubies/ruby-2.7.0/bin/ruby --version
+  - /usr/bin/ruby    --version
+  - /bin/ruby        --version
+  - pyenv            --version  # 1.1.5
+  - which -a python
+  - /usr/bin/python  --version
+  - /bin/python      --version
+  - python -m pip    --version || true
+  - pip              --version || true
   - which -a python3 || true
+  - /usr/bin/python3 --version
+  - /bin/python3     --version
+  - python3 -m pip   --version || true
+  - pip3             --version || true
+  - python3.5        --version || true
+  - python3.6        --version || true
+  - python3.7        --version || true
+  - python3.8        --version || true
   - which -a pypy || true
   - which -a pypy3 || true
-  - nvm --version || true
-  - go version
-  - gradle --version || true
-  - maven --version || true
-  - groovy --version || true
-  - phpenv --version || true
+  - nvm              --version  # 0.35.3
+  - go                 version  # go1.11.1
+  - gradle           --version || true
+  - maven            --version || true
+  - groovy           --version || true
+  - phpenv           --version  # rbenv 1.1.2-30-gc879cb0
   - which -a php
+  - ls /home/travis/.phpenv/shims
 
 notifications:
   on_success: never
