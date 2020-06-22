@@ -2,10 +2,10 @@ os: linux
 dist: focal
 language: shell
 services:
-  - mongodb 	  # 4.0
-  - mysql 	    # 5.7
-  - redis 	    # 5.5
-  - postgresql 	# 9.3 9.4 9.5 9.6 10 11
+  - mongodb     # 4.0
+  - mysql       # 5.7
+  - redis       # 5.5
+  - postgresql  # 9.3 9.4 9.5 9.6 10 11
 install: true
 script:
   - git              --version  # 2.27.0
@@ -57,13 +57,10 @@ script:
   - phpenv           --version  # rbenv 1.1.2-30-gc879cb0
   - which -a php
   - ls /home/travis/.phpenv/shims  # composer  php  phpunit
-  # which java  || true
-  # which javac || true
-  java version || true
+  which java  || true
+  which javac || true
   java -version || true
-  javac version || true
   javac -version || true
-  
 
 notifications:
   on_success: never
