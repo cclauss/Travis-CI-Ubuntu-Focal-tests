@@ -1,6 +1,12 @@
 os: linux
 dist: focal
 language: shell
+addons:
+  apt:
+    sources:
+      - ppa:mongodb-4.0-focal
+    packages:
+      - mongodb
 services:
   - mongodb     # 4.0
   - mysql       # 5.7
@@ -42,6 +48,7 @@ script:
   - python3 -m pip   --version  # pip 20.0.2 from /usr/lib/python3/dist-packages/pip (python 3.8)
   - pip3             --version  # pip 20.0.2 from /usr/lib/python3/dist-packages/pip (python 3.8)
   - pip install --upgrade pip   # Successfully installed pip-20.1.1
+  # No default support for legacy Python or Pypy
   - which -a python2   || true  # not found
   - which -a python2.7 || true  # not found
   - which -a pypy      || true  # not found
@@ -57,10 +64,10 @@ script:
   - phpenv           --version  # rbenv 1.1.2-30-gc879cb0
   - which -a php
   - ls /home/travis/.phpenv/shims  # composer  php  phpunit
-  - which java  || true
-  - which javac || true
-  - java -version || true
-  - javac -version || true
+  - php              --version
+  # Java =====================
+  - java              -version  # openjdk version "11.0.7" 2020-04-14 64-bit
+  - javac             -version  # 11.0.7
 
 notifications:
   on_success: never
