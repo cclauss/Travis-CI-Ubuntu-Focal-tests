@@ -57,10 +57,10 @@ script:
   - phpenv           --version  # rbenv 1.1.2-30-gc879cb0
   - which -a php
   - ls /home/travis/.phpenv/shims  # composer  php  phpunit
-  which java  || true
-  which javac || true
-  java -version || true
-  javac -version || true
+  - which java  || true
+  - which javac || true
+  - java -version || true
+  - javac -version || true
 
 notifications:
   on_success: never
