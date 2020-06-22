@@ -1,0 +1,49 @@
+os: linux
+dist: focal
+language: shell
+addons:
+  apt:
+    sources:
+      - docker-focal
+      - github-git-lfs-focal
+      - mongodb-4.0-focal
+    packages:
+      - docker
+      - git-lfs
+      - mongodb
+# services
+# mongodb 	4.0
+# mysql 	5.7
+# redis 	5.5
+# postgresql 	9.3 9.4 9.5 9.6 10 11
+install: true
+script:
+  - git --version || true
+  - git-lfs --version || true
+  - hg --version || true
+  - cmake --version || true
+  - gcc --version || true
+  - ccache --version || true
+  - shellcheck --version || true
+  - shfmt --version || true
+  - docker --version || true
+  - compose --version || true
+  - docker-compose --version || true
+  - rvm --version || true
+  - which -a ruby || true
+  - pyenv --version || true
+  - which -a python || true
+  - which -a python3 || true
+  - which -a pypy || true
+  - which -a pypy3 || true
+  - nvm --version || true
+  - go version
+  - gradle --version || true
+  - maven --version || true
+  - groovy --version || true
+  - phpenv --version || true
+  - which -a php
+
+notifications:
+  on_success: never
+  on_failure: never
