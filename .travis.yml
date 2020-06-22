@@ -4,9 +4,9 @@ language: shell
 addons:
   apt:
     sources:
-      - docker-focal
-      - github-git-lfs-focal
-      - mongodb-4.0-focal
+      - docker-bionic
+      - github-git-lfs-bionic
+      - mongodb-4.0-bionic
     packages:
       - docker
       - git-lfs
@@ -51,15 +51,11 @@ script:
   - pip              --version  # pip 20.0.2 from /usr/lib/python3/dist-packages/pip (python 3.8)
   - python3 -m pip   --version  # pip 20.0.2 from /usr/lib/python3/dist-packages/pip (python 3.8)
   - pip3             --version  # pip 20.0.2 from /usr/lib/python3/dist-packages/pip (python 3.8)
-  # legacy Python ============
-  - which -a python2 || true  # not found
-  - which -a python2.7 || true
-  - /usr/bin/python2.7 --version  # 2.7.18~rc1-2
-  - /bin/python2.7     --version  # 2.7.18~rc1-2
-  - python2.7 -m pip   --version  # 
-  - pip2.7             --version  # 
-  - which -a pypy || true
-  - which -a pypy3 || true
+  - pip install --upgrade pip   # 
+  - which -a python2   || true  # not found
+  - which -a python2.7 || true  # not found
+  - which -a pypy      || true  # not found
+  - which -a pypy3     || true  # not found
   # Node.js ==================
   - nvm              --version  # 0.35.3
   # Go =======================
