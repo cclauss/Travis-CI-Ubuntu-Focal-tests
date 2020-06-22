@@ -47,30 +47,30 @@ script:
   - python3.6        --version || true  # not found
   - python3.7        --version || true  # not found
   - python3.8        --version  # 3.8.2
-  - python -m pip    --version # pip 20.0.2 from /usr/lib/python3/dist-packages/pip (python 3.8)
-  - pip              --version # pip 20.0.2 from /usr/lib/python3/dist-packages/pip (python 3.8)
-  - python3 -m pip   --version # pip 20.0.2 from /usr/lib/python3/dist-packages/pip (python 3.8)
-  - pip3             --version # pip 20.0.2 from /usr/lib/python3/dist-packages/pip (python 3.8)
+  - python -m pip    --version  # pip 20.0.2 from /usr/lib/python3/dist-packages/pip (python 3.8)
+  - pip              --version  # pip 20.0.2 from /usr/lib/python3/dist-packages/pip (python 3.8)
+  - python3 -m pip   --version  # pip 20.0.2 from /usr/lib/python3/dist-packages/pip (python 3.8)
+  - pip3             --version  # pip 20.0.2 from /usr/lib/python3/dist-packages/pip (python 3.8)
   # legacy Python ============
-  - which -a python2 || true
-  - /usr/bin/python2 --version  # 2.7.18~rc1-2
-  - /bin/python2     --version  # 2.7.18~rc1-2
-  - python2 -m pip   --version # 
-  - pip2             --version # 
+  - which -a python2 || true  # not found
+  - which -a python2.7 || true
+  - /usr/bin/python2.7 --version  # 2.7.18~rc1-2
+  - /bin/python2.7     --version  # 2.7.18~rc1-2
+  - python2.7 -m pip   --version  # 
+  - pip2.7             --version  # 
   - which -a pypy || true
   - which -a pypy3 || true
   # Node.js ==================
   - nvm              --version  # 0.35.3
   # Go =======================
   - go                 version  # go1.11.1
-  - gradle           --version || true
-  - maven            --version || true
-  - groovy           --version || true
+  - gradle           --version || true  # not found
+  - maven            --version || true  # not found
+  - groovy           --version || true  # not found
   # PHP ======================
   - phpenv           --version  # rbenv 1.1.2-30-gc879cb0
   - which -a php
   - ls /home/travis/.phpenv/shims  # composer  php  phpunit
-  - ls /home/travis/.phpenv/shims/php
 
 notifications:
   on_success: never
